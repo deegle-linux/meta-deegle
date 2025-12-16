@@ -17,7 +17,7 @@ index 7768121f5f..7d26e04fe3 100644
  [Service]
  Type=oneshot
 -ExecStart={{LIBEXECDIR}}/systemd-networkd-wait-online
-+ExecStart={{LIBEXECDIR}}/systemd-networkd-wait-online --any
++ExecStart=true
  RemainAfterExit=yes
  
  [Install]
