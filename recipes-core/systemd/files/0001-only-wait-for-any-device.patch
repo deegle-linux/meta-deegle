@@ -1,0 +1,23 @@
+From 1658efa3752d95b61d1ce55bec15f67e7ea4d9c2 Mon Sep 17 00:00:00 2001
+From: Tom Irgang <me@tomirgang.de>
+Date: Tue, 16 Dec 2025 18:34:04 +0100
+Subject: [PATCH] only wait for any device
+Upstream-Status: Pending
+
+---
+ units/systemd-networkd-wait-online.service.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/units/systemd-networkd-wait-online.service.in b/units/systemd-networkd-wait-online.service.in
+index 7768121f5f..7d26e04fe3 100644
+--- a/units/systemd-networkd-wait-online.service.in
++++ b/units/systemd-networkd-wait-online.service.in
+@@ -19,7 +19,7 @@ Before=network-online.target shutdown.target
+ 
+ [Service]
+ Type=oneshot
+-ExecStart={{LIBEXECDIR}}/systemd-networkd-wait-online
++ExecStart={{LIBEXECDIR}}/systemd-networkd-wait-online --any
+ RemainAfterExit=yes
+ 
+ [Install]
