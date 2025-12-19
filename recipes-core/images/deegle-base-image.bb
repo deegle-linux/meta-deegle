@@ -16,7 +16,10 @@ IMAGE_ROOTFS_EXTRA_SPACE:append = "${@bb.utils.contains("DISTRO_FEATURES", "syst
 # kernel modules for g_ether
 
 # DEEGLE_GPIO_SUPPORT
-# libgpiod and python3-gpio for GPIO access
+# libgpiod and libgpiod-tools for GPIO access
+
+# ID: DEEGLE_I2C_SUPPORT
+# i2c-tools for I2C access
 
 IMAGE_INSTALL:append = " \
     kernel-modules \
@@ -26,9 +29,7 @@ IMAGE_INSTALL:append = " \
     net-tools \
     lshw \
     kea \
-    python3 \
     libgpiod \
-    libgpiod-dev \
     libgpiod-tools \
-    python3-gpiod \
+    i2c-tools \
 "
